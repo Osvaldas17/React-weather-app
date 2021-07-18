@@ -1,0 +1,419 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Solis,Arial,Helvetica,sans-serif;
+}
+.App {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #282c34;
+    background-image: url("https://wallpapercrafter.com/desktop/212865-greece-discover-roadtrip-and-weather-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1000px;
+    background-color: rgba(255,255,255, 0.7)
+}
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+/* Administrative divisions styles */
+
+.AdministrativeDivisionDiv {
+    width: 45%;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    background-color: white;
+    color: rgb(51,51,51);
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+.AdministrativeDivisionsListWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Front page styles */
+
+.weatherIcon {
+    width: 40px;
+    height: 40px;
+}
+.singleCitySomeInfo {
+    display: flex;
+    align-items: center;
+    //border: 1px solid #282c34;
+    width: 40%;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    background-color: #282c34;
+    color: white;
+    &:hover {
+        transform: scale(1.01);
+        background-color: white;
+        color: #282c34;
+    }
+}
+.topPartWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+}
+.clickForMoreCon {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.clickForMore {
+    padding: 15px;
+    margin-right: 80px;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+    background-color: rgba(255,255,255, 0.8);
+    &:hover {
+        background-color: #3e4351;
+        color: white;
+    }
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* detailed weather classes */
+
+.timeStampLinksCon {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: bold;
+}
+.timeStampLink {
+    color: #3e4351;
+    margin: 0 30px;
+    font-size: 25px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.15);
+        color: #767a8a;
+    }
+}
+.detailedWeatherWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+}
+.detailedWeatherCompContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #282c34;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: #373b48;
+        transform: translateY(8px) scale(0.98);
+    }
+}
+.weatherIconMed {
+    height: 110px;
+    width: 110px;
+}
+.detailedCompSubCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: bold;
+    color: white;
+}
+.tempSizeL {
+    font-size: 50px;
+    font-weight: normal;
+}
+/* Chart Classes */
+
+.title {
+    color: #3e4351;
+    margin-right: 20px;
+}
+.CharHeader {
+    display: flex;
+}
+.chartWrapperMobile {
+    display: none;
+}
+
+/* Hourly mobile */
+
+.weatherIconSm {
+    width: 40px;
+    height: 40px;
+}
+.hourlyMobileComp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    color: white;
+    margin: 10px 0;
+    padding: 5px;
+}
+.tempIconMobileCon {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Header classes */
+
+.App-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(40, 44, 52,0.8);
+    z-index: 99;
+}
+
+.homeBtn {
+    display: flex;
+    position: fixed;
+    top: 35px;
+    left: 5%;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(221,221,221);
+    transition: 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.10);
+        color: white;
+        border-bottom: 1px solid white;
+    }
+}
+
+.searchBar {
+    outline: none;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    color: #3e4351;
+}
+.searchBarInputCon {;
+    margin: 25px 0 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.fa-search {
+    font-size: 30px;
+    padding: 0 10px;
+    color: rgb(221,221,221);
+}
+
+.searchBarWrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 99;
+
+}
+.resultsConUl {
+    z-index: 99;
+    list-style: none;
+    background-color: white;
+}
+
+.searchBarResultConLi {
+    border-top: 1px solid #3e4351;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover {
+        background-color: #3e4351;
+        color: white;
+    }
+}
+/* daily */
+
+.extraDataDaily {
+    flex-direction: column;
+    background-color: #2e313b;
+    font-size: 25px;
+    overflow: hidden;
+    transition: 0.7s ease-in-out;
+    transition-delay: 0s;
+}
+.extraDataDailySub {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 15px;
+    align-items: center;
+    box-shadow: 30px 3px 30px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 30px 3px 30px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 30px 3px 30px -10px rgba(0,0,0,0.75);
+}
+
+.simpleDailyDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 25px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: #373b48;
+        transform: translateY(8px) scale(0.98);
+    }
+}
+.dailyCompWrapperSub {
+    cursor: pointer;
+    color: white;
+    background-color: #282c34;
+}
+
+/* utility classes */
+
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex
+}
+
+.dividerY {
+    height: 50px;
+    border: 1px solid #3e4351;
+}
+.borderBot1 {
+    border-bottom: solid 1px #3e4351;
+}
+.width-100 {
+    width: 100%;
+}
+.d-flex {
+    display: flex;
+}
+.text-center {
+    text-align: center;
+}
+.margin-top-5 {
+    margin-top: 5px;
+}
+.h2Centered {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+.padding10 {
+    padding: 10px;
+}
+.margin20 {
+    margin: 20px;
+}
+.padding8 {
+    padding: 8px;
+}
+.padding10Sm5 {
+    padding: 10px;
+}
+.marginBot10 {
+    margin-bottom: 10px;
+}
+.margin1 {
+    margin: 1px;
+}
+.margin4 {
+    margin: 4px;
+}
+.textColor1 {
+    color: #3e4351
+}
+.width-25 {
+    width: 25%;
+}
+.font-size-30 {
+    font-size: 30px;
+}
+.font-size-20 {
+    font-size: 20px;
+}
+.font-size-15 {
+    font-size: 15px;
+}
+@media only screen and (max-width: 1000px) {
+    .content-wrapper {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .singleCitySomeInfo {
+        width: 90%;
+    }
+    .homeBtn {
+        top: 100px;
+        left: 40%;
+    }
+    .App-header {
+        height: 150px;
+    }
+    .searchBar {
+        font-size: 20px;
+        padding: 10px 5px;
+    }
+    .fa-search {
+        padding: 0 5px;
+    }
+    .chartWrapperDesktop {
+        display: none;
+    }
+    .chartWrapperMobile {
+        display: block;
+    }
+    .detailedWeatherCompContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .detailedCompSubCon {
+        display: block;
+    }
+    .displayNone750 {
+        display: none;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .AdministrativeDivisionDiv {
+        width: 90%;
+    }
+    .timeStampLink {
+        margin: 0 15px;
+    }
+    .padding10Sm5 {
+        padding: 5px;
+    }
+    .flex-direction-column-500 {
+        flex-direction: column;
+    }
+}
