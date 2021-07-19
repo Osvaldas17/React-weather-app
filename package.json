@@ -2,6 +2,7 @@
   "name": "react-1",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.meteo.lt/v1",
   "dependencies": {
     "chart.js": "^3.4.1",
     "dateformat": "^4.5.1",

@@ -5,7 +5,6 @@ export default function DailyWeather({cityForecast: {forecastTimestamps, place: 
 
     const parsedData = {}
 
-    console.log(parsedData)
     for (let i = 0; i < forecastTimestamps.length; i++) {
         const item = forecastTimestamps[i]
         const {forecastTimeUtc, airTemperature, conditionCode} = item

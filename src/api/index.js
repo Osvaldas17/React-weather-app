@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://simutis.dev/api/meteo-proxy'
+export const BASE_URL = ''
 
 const api = {
   places: () => `${BASE_URL}/places`,
