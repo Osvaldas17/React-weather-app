@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {actions} from "../../Redux/actions";
 import {Link, useHistory} from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
+import api from '../../api';
 
 export default function WeatherIn20TopCities() {
 
@@ -29,7 +30,7 @@ export default function WeatherIn20TopCities() {
         if (!topCitiesState.length) {
             Promise.all(
                 topCitiesNames.map((name) =>
-                    fetch(`/places/${name}/forecasts/long-term`)
+                    fetch(api.longTermName(name))
                         .then(res => res.json())
                         .then(res => res)
                         .catch((e) => {

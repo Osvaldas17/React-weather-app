@@ -7,6 +7,7 @@ import {
     BrowserRouter as Router, Link, Route, Switch,
 } from "react-router-dom";
 import MoonLoader from "react-spinners/MoonLoader";
+import api from '../../../api';
 
 export default function DetailedWeatherSingleCity() {
 
@@ -16,7 +17,7 @@ export default function DetailedWeatherSingleCity() {
 
     useEffect(() => {
         setLoadingState(true)
-        fetch(`/places/${CityCode}/forecasts/long-term`)
+        fetch(api.longTermCode(CityCode))
             .then(res => res.json())
             .then(data => setCityForecast(data))
             .catch((e) => {
