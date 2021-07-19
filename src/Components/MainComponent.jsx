@@ -10,6 +10,7 @@ import AdministrativeDivisionComponent from "./SubComponents/AdministrativeDivis
 import WeatherIn20TopCities from "./SubComponents/WeatherIn20TopCities";
 import CitiesInsideAdministrationDivision from "./SubComponents/CitiesInsideAdministrationDivision";
 import DetailedWeatherSingleCity from "./SubComponents/detailedWeatherComponent/DetailedWeatherSingleCity";
+import api from '../api';
 
 
 export default function MainComponent() {
@@ -17,10 +18,9 @@ export default function MainComponent() {
     const {setAllLocationsList} = actions
     const dispatch = useDispatch()
     const [loadingState, setLoadingState] = useState(true)
-
     useEffect(() => {
         setLoadingState(true)
-        fetch('/places')
+        fetch(api.places())
             .then(res => res.json())
             .then(data => {
                 let lithuanianCities = data.filter((e) => e.countryCode === 'LT')
